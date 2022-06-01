@@ -3,13 +3,13 @@ This repository contains the scripts that were used in the analyses of the Bioin
 
 # Scripts included in this repository:
 ## Clinicopathological analyses
-*cp_table.R
-*sv_analysis_McS.R
+* cp_table.R
+* sv_analysis_McS.R
 ## Transcriptomic analyses
-*DE_analysis_FPKM_SMb.R
-*heatmap_FPKM_SMb.R
-*Metagene_analysis_FPKM_restructured.R
+* DE_analysis_FPKM_SMb.R
+* heatmap_FPKM_SMb.R
+* Metagene_analysis_FPKM_restructured.R
 ## Mutational analyses
-*Mut_analysis.R
+* Mut_analysis.R
 ## Copy number alteration analyses
-*CN_analysis.R
+* CN_analysis.R
