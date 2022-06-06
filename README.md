@@ -8,6 +8,37 @@ This repository contains the scripts that were used in the analyses of the Bioin
 
 # Project workflow and associated scripts
 
+**Software basis:**
+- R (*version 4.0.3*)
+- RStudio (*version 1.3.1093*)
+*Packages:*
+- tidyverse (*version 1.3.1*)
+- matrixStats (*version 0.61.0*)
+- DescTools (*version 0.99.44*)
+- ggplot2 (*version 3.3.5*)
+- ggfortify (*version 0.4.14*)
+- survival (*version 3.3.1*)
+- survminer (*version 0.4.9*)
+- grid (*version 4.0.3*)
+- biomaRt (*version 2.46.3*)
+- regioneR (*version 1.22.0*)
+- karyoplotR (*version 1.16.0*)
+- CopyNumberPlots (*version 1.6.0*)
+- BSgenome.Hsapiens.UCSC.hg19 (*version 1.4.3*)
+- plyranges (*version 1.10.0*)
+- car (*version 3.0.12*)
+- ggsignif (*version 0.6.3*)
+- readxl (*version 1.3.1*)
+- GenVisR (*version 1.3.1*)
+- reshape2 (*version 1.4.4*)
+- ggstatsplot (*version 0.9.1*)
+- janitor (*version 2.1.0*)
+- gridExtra (*version 2.3*)
+- pheatmap (*version 1.0.12*)
+- Hmisc (*version 4.6.0*)
+- VennDiagram (*version 1.7.1*)
+- amap (*version 0.8.18*)
+
 ## Data cohorts
 The analyses in this study were based on the primary breast cancer datasets of two large independent cohorts:
 1. **The Sweden Cancerome Analysis Network – Breast study (SCAN-B)**
