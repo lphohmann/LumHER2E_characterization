@@ -43,7 +43,7 @@ The basal metagene constituted genes such as basal cell keratins and therefore a
 
 ## Differential gene expression analysis
 ### Description
-The differential gene expression analysis was performed to identify differentially expressed genes between luminal breast cancers belonging to the HER2E and subtypes Luminal A and Luminal B. Two-sided t-tests in combination with false-discovery rate for multiple testing correction were employed to identify genes that differ significantly in their expression between the subtypes. Genes with a corrected p-value  0.05 were considered to be differentially expressed. The core set of differentially expressed genes was defined by genes that were both differentially expressed in the SCAN-B, as well as the METABRIC cohort. 
+The differential gene expression analysis was performed to identify differentially expressed genes between luminal breast cancers belonging to the HER2E and subtypes Luminal A and Luminal B. Two-sided t-tests in combination with false-discovery rate for multiple testing correction were employed to identify genes that differ significantly in their expression between the subtypes. Genes with a corrected p-value < 0.05 were considered to be differentially expressed. The core set of differentially expressed genes was defined by genes that were both differentially expressed in the SCAN-B, as well as the METABRIC cohort. 
 ### Associated Scripts
 * DE_analysis.R
 * heatmap_gex.R
@@ -62,7 +62,7 @@ Copy number analyses were performed in the METABRIC cohort, as no data was avail
 
 ## Mutational enrichment analysis 
 ### Description
-The enrichment of mutations in the subgroups was investigated to identify potential drivers specific to the luminal HER2E subgroup. For each gene the mutational frequency was calculated for the three subgroups and subsequently Fisher’s exact tests in combination with false-discovery rate for multiple testing correction were employed to assess significance (p  0.05). For SCAN-B expressed somatic variants similar to Brueffer et al. were used, and for METABRIC mutational calls from a targeted NGS DNA-based panel.
+The enrichment of mutations in the subgroups was investigated to identify potential drivers specific to the luminal HER2E subgroup. For each gene the mutational frequency was calculated for the three subgroups and subsequently Fisher’s exact tests in combination with false-discovery rate for multiple testing correction were employed to assess significance (p < 0.05). For SCAN-B expressed somatic variants similar to Brueffer et al. were used, and for METABRIC mutational calls from a targeted NGS DNA-based panel.
 ### Associated Scripts
 * mut_analyses.R
 
