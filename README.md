@@ -10,13 +10,13 @@ This repository contains the scripts that were used in the analyses of the Bioin
 
 ## Data cohorts
 The analyses in this study were based on the primary breast cancer datasets of two large independent cohorts:
-1. The Sweden Cancerome Analysis Network – Breast study (SCAN-B)
+1. **The Sweden Cancerome Analysis Network – Breast study (SCAN-B)**
 * provided clinical and RNA-seq data on 4413 clinically ER+/HER2- cases (*Luminal HER2E:* 79; *Luminal A:* 2856; *Luminal B:* 1249)
 * data for SCAN-B was obtained from a submitted study by Staaf et al. (https://www.medrxiv.org/content/10.1101/2021.12.03.21267116v2)
 * **Availability:** https://data.mendeley.com/datasets/yzxtxn4nmd/draft?a=efbf838d-a16c-4133-8315-eba181b75f3e
 
-2. The Molecular Taxonomy of Breast Cancer International Consortium (METABRIC) 
-* provided data on 1227 clinically HER2-/ER+ cases (*Luminal HER2E:* 58; *Luminal A:* 622; *Luminal B:* 350)
+2. **The Molecular Taxonomy of Breast Cancer International Consortium (METABRIC)**
+* provided clinical, mutational (targeted NGS), transcriptomic (Illumina HT-12 v3 platform), and copy number (Affymetrix SNP 6.0 platform) data on 1227 clinically HER2-/ER+ cases (*Luminal HER2E:* 58; *Luminal A:* 622; *Luminal B:* 350)
 * **Availability:** data was downloaded from the CBioPortal website (https://www.cbioportal.org/) as pre-compiled data
 
 ## Clinicopathological variables 
