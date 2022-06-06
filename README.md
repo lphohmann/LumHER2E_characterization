@@ -8,16 +8,53 @@ This repository contains the scripts that were used in the analyses of the Bioin
 
 **Results:** The findings of the study at hand demonstrated that luminal HER2E breast cancer is a small but clinically important subgroup that is associated with a significantly faster disease recurrence than other luminal subtypes, regardless of current standard of care treatment. With highly proliferative characteristics akin to the Luminal B subtype, HER2E tumors are characterized by a low expression of ESR1, a high immune response, a high burden of copy number alterations and a high frequency of TP53 mutations.
 
-# Scripts included in this repository:
-## Clinicopathological analyses
+# Workflow and associated scripts
+
+## Clinicopathological variables 
+### Description
+The clinicopathological characterization of luminal HER2E breast cancer included analyses to determine differences of the clinical variables between luminal breast cancers belonging to the intrinsic molecular subtypes Luminal A, Luminal B, and HER2E. Fisher’s exact tests were employed to compare the differences in tumor grades, lymph node statuses, and HER2-low frequency. The clinicopathological variables age and tumor size were assessed using either a two-sided Student’s or Welch's t-test, depending on whether the assumption of equal variance was fulfilled or not. 
+### Associated Scripts
 * cp_variable_comparisons.R
+
+## Survival analysis 
+### Description
+Using a Kaplan-Meier analysis with the log-rank test in combination with a univariate Cox’s proportional hazards model, the difference in recurrence-free intervals (RFI) after treatment between the intrinsic luminal subtypes was investigated. To evaluate the effect of the intrinsic molecular PAM50 subtype on RFI when taking additional variables into consideration, a multivariate Cox’s proportional hazards model including the variables PAM50 subtype, age, lymph node status, tumor size and tumor grade was constructed. 
+### Associated Scripts
 * surv_analysis.R
-## Transcriptomic analyses
+
+## Gene expression analyses
+**Data preprocessing:** For all gene expression analyses the SCAN-B cohort data preprocessing consisted of log2-transforming the FPKM gene expression data with an offset of +1 and subsequently gene-wise scaling by applying a z-transformation. The METABRIC data was already preprocessed (including z-transformation) and therefore simply used as deposited.
+
+## Metagene analysis 
+### Description
+The metagene analysis focused on investigating differences between the luminal subtypes in six transcriptional programs (termed basal, lipid, mitotic checkpoint, immune response, steroid response, and stroma) related to breast-cancer biology. Each of the transcriptional programs was assessed by analyzing the expression of an associated gene set (termed a metagene), which were previously defined by Fredlund et. al. (23).
+The basal metagene constituted genes such as basal cell keratins and therefore assessed basal transcriptomic characteristics. The lipid metagene was representative of adipocytic characteristics, the mitotic checkpoint metagene of cell cycle processes, the immune response metagene of immune response processes, and the stroma metagene of extracellular matrix-related processes. Furthermore, the steroid response (SR) metagene was constituted by a set of known ER status-related genes and therefore assessed processes related to the response to ER-targeted endocrine treatment (23). The metagene score for each sample was calculated as the median of the processed gene expression values. Differences in metagene scores between the intrinsic molecular subtypes were assessed using two-sided Welch's or Student’s t-tests.
+### Associated Scripts
+* metagene_analysis.R
+
+## Differential gene expression analysis
+### Description
+The differential gene expression analysis was performed to identify differentially expressed genes between luminal breast cancers belonging to the HER2E and subtypes Luminal A and Luminal B. Two-sided t-tests in combination with false-discovery rate for multiple testing correction were employed to identify genes that differ significantly in their expression between the subtypes. Genes with a corrected p-value  0.05 were considered to be differentially expressed. The core set of differentially expressed genes was defined by genes that were both differentially expressed in the SCAN-B, as well as the METABRIC cohort. 
+### Associated Scripts
 * DE_analysis.R
 * heatmap_gex.R
-* metagene_analysis.R
+
+## Target gene expression analysis
+### Description
+Analysis of the expression of specifically selected genes (like ERBB2) was performed to address the question of sample misclassification, as well as to validate obtained results and potentially gaining further biological/molecular insight. Two-sided Student’s t-tests was performed to investigate differences between luminal intrinsic subtypes. To assess the number of clinically HER2-negative HER2E cases in SCAN-B that might potentially in fact be HER2-positive we defined misclassified samples as cases with ERBB2 mRNA expression values further than 2.7 standard deviations away from the mean of all HER2E cases.
+### Associated Scripts
 * singlegene_gex_analysis.R
-## Mutational analyses
-* mut_analyses.R
-## Copy number alteration analyses
+
+## Copy number alteration analyses 
+### Description
+Copy number analyses were performed in the METABRIC cohort, as no data was available for SCAN-B. For 22544 genes deposited copy number data provided a copy number state of neutral (0), gain (1), amplification (2), loss (-1), or low-deletion/homozygous deletion (-2). The total frequencies of copy number alterations between subtypes were compared by summing up all alterations (gain, amplification, or loss) that occurred. In contrast, the comparison of spatial copy number alteration profiles differentiated between gain (copy number state >= 1) and loss (copy number state <= -1) alterations, which were assessed for each genomic position. Furthermore, identification of possible tumor drivers was investigated by assessing driver gain (copy number state > 1) and driver loss (copy number state < -1) for each genomic position. Fisher’s exact tests in combination with false-discovery rate for multiple testing correction were employed to assess significance.
+### Associated Scripts
 * CN_analyses.R
+
+## Mutational enrichment analysis 
+### Description
+The enrichment of mutations in the subgroups was investigated to identify potential drivers specific to the luminal HER2E subgroup. For each gene the mutational frequency was calculated for the three subgroups and subsequently Fisher’s exact tests in combination with false-discovery rate for multiple testing correction were employed to assess significance (p  0.05). For SCAN-B expressed somatic variants similar to Brueffer et al. were used, and for METABRIC mutational calls from a targeted NGS DNA-based panel (24).
+### Associated Scripts
+* mut_analyses.R
+
+
