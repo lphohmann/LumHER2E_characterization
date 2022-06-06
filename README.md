@@ -1,14 +1,23 @@
 # LumHER2E_characterization
 This repository contains the scripts that were used in the analyses of the Bioinformatics master thesis project "**Molecular and clinicopathological characterization of Luminal HER2-enriched breast cancer**".
 
-## Project Abstract
+## Project overview: Background and main findings
 **Introduction:** Clinically, breast cancer is divided into subgroups based on the assessment of estrogen receptor (ER), progesterone receptor, and human epidermal growth factor receptor 2 (HER2) status. HER2-/ER+ tumors constitute the luminal subgroup. By using a PAM50-based gene expression profiling assay, luminal tumors can be stratified into the intrinsic molecular subtypes Luminal A, Luminal B and HER2-enriched (HER2E). Despite its association with poor patient outcome, the luminal HER2E subtype currently holds no implications for clinical treatment decisions other than as a marker for aggressive disease due to a lack of insight into its characterizing features. Therefore, the study at hand aimed to comprehensively characterize luminal HER2E breast cancer based on clinicopathological and molecular features to evaluate the response of patients to conventionally administered therapies and identify features that might be used to inform treatment decisions in the future. 
-
-**Methods:** The analyses in this study were based on the primary breast cancer datasets of two large independent cohorts. The Sweden Cancerome Analysis Network – Breast study provided data on 4413 clinically ER+/HER2- cases (Luminal HER2E: 79; Luminal A: 2856; Luminal B: 1249). The Molecular Taxonomy of Breast Cancer International Consortium (METABRIC) provided data on 1227 clinically HER2-/ER+ cases (LumHER2E: 58; LumA: 622; LumB: 350). Approaches included comparative statistics of clinicopathological variables, survival analyses, gene expression analyses, mutational enrichment analyses, and copy number analyses.
 
 **Results:** The findings of the study at hand demonstrated that luminal HER2E breast cancer is a small but clinically important subgroup that is associated with a significantly faster disease recurrence than other luminal subtypes, regardless of current standard of care treatment. With highly proliferative characteristics akin to the Luminal B subtype, HER2E tumors are characterized by a low expression of ESR1, a high immune response, a high burden of copy number alterations and a high frequency of TP53 mutations.
 
-# Workflow and associated scripts
+# Project workflow and associated scripts
+
+## Data cohorts
+The analyses in this study were based on the primary breast cancer datasets of two large independent cohorts:
+1. The Sweden Cancerome Analysis Network – Breast study (SCAN-B)
+* provided clinical and RNA-seq data on 4413 clinically ER+/HER2- cases (*Luminal HER2E:* 79; *Luminal A:* 2856; *Luminal B:* 1249)
+* data for SCAN-B was obtained from a submitted study by Staaf et al. (https://www.medrxiv.org/content/10.1101/2021.12.03.21267116v2)
+* **Availability:** https://data.mendeley.com/datasets/yzxtxn4nmd/draft?a=efbf838d-a16c-4133-8315-eba181b75f3e
+
+2. The Molecular Taxonomy of Breast Cancer International Consortium (METABRIC) 
+* provided data on 1227 clinically HER2-/ER+ cases (*Luminal HER2E:* 58; *Luminal A:* 622; *Luminal B:* 350)
+* **Availability:** data was downloaded from the CBioPortal website (https://www.cbioportal.org/) as pre-compiled data
 
 ## Clinicopathological variables 
 ### Description
@@ -27,8 +36,8 @@ Using a Kaplan-Meier analysis with the log-rank test in combination with a univa
 
 ## Metagene analysis 
 ### Description
-The metagene analysis focused on investigating differences between the luminal subtypes in six transcriptional programs (termed basal, lipid, mitotic checkpoint, immune response, steroid response, and stroma) related to breast-cancer biology. Each of the transcriptional programs was assessed by analyzing the expression of an associated gene set (termed a metagene), which were previously defined by Fredlund et. al. (23).
-The basal metagene constituted genes such as basal cell keratins and therefore assessed basal transcriptomic characteristics. The lipid metagene was representative of adipocytic characteristics, the mitotic checkpoint metagene of cell cycle processes, the immune response metagene of immune response processes, and the stroma metagene of extracellular matrix-related processes. Furthermore, the steroid response (SR) metagene was constituted by a set of known ER status-related genes and therefore assessed processes related to the response to ER-targeted endocrine treatment (23). The metagene score for each sample was calculated as the median of the processed gene expression values. Differences in metagene scores between the intrinsic molecular subtypes were assessed using two-sided Welch's or Student’s t-tests.
+The metagene analysis focused on investigating differences between the luminal subtypes in six transcriptional programs (termed basal, lipid, mitotic checkpoint, immune response, steroid response, and stroma) related to breast-cancer biology. Each of the transcriptional programs was assessed by analyzing the expression of an associated gene set (termed a metagene), which were previously defined by Fredlund et. al..
+The basal metagene constituted genes such as basal cell keratins and therefore assessed basal transcriptomic characteristics. The lipid metagene was representative of adipocytic characteristics, the mitotic checkpoint metagene of cell cycle processes, the immune response metagene of immune response processes, and the stroma metagene of extracellular matrix-related processes. Furthermore, the steroid response (SR) metagene was constituted by a set of known ER status-related genes and therefore assessed processes related to the response to ER-targeted endocrine treatment. The metagene score for each sample was calculated as the median of the processed gene expression values. Differences in metagene scores between the intrinsic molecular subtypes were assessed using two-sided Welch's or Student’s t-tests.
 ### Associated Scripts
 * metagene_analysis.R
 
@@ -53,7 +62,7 @@ Copy number analyses were performed in the METABRIC cohort, as no data was avail
 
 ## Mutational enrichment analysis 
 ### Description
-The enrichment of mutations in the subgroups was investigated to identify potential drivers specific to the luminal HER2E subgroup. For each gene the mutational frequency was calculated for the three subgroups and subsequently Fisher’s exact tests in combination with false-discovery rate for multiple testing correction were employed to assess significance (p  0.05). For SCAN-B expressed somatic variants similar to Brueffer et al. were used, and for METABRIC mutational calls from a targeted NGS DNA-based panel (24).
+The enrichment of mutations in the subgroups was investigated to identify potential drivers specific to the luminal HER2E subgroup. For each gene the mutational frequency was calculated for the three subgroups and subsequently Fisher’s exact tests in combination with false-discovery rate for multiple testing correction were employed to assess significance (p  0.05). For SCAN-B expressed somatic variants similar to Brueffer et al. were used, and for METABRIC mutational calls from a targeted NGS DNA-based panel.
 ### Associated Scripts
 * mut_analyses.R
 
