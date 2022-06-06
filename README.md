@@ -8,7 +8,7 @@ This repository contains the scripts that were used in the analyses of the Bioin
 
 # Project workflow and associated scripts
 
-**Software basis:**
+## Software basis
 - R (*version 4.0.3*)
 - RStudio (*version 1.3.1093*)
 
