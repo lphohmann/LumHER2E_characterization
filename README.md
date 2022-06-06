@@ -4,11 +4,12 @@ This repository contains the scripts that were used in the analyses of the Bioin
 # Scripts included in this repository:
 ## Clinicopathological analyses
 * cp_variable_comparisons.R
-* sv_analysis_McS.R
+* surv_analysis.R
 ## Transcriptomic analyses
 * DE_analysis.R
 * heatmap_gex.R
-* Metagene_analysis_FPKM_restructured.R
+* metagene_analysis.R
+* singlegene_gex_analysis.R
 ## Mutational analyses
 * mut_analyses.R
 ## Copy number alteration analyses
